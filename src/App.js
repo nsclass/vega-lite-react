@@ -4,6 +4,8 @@ import * as vl from "vega-lite-api"
 import * as vega from "vega"
 import * as vegaLite from "vega-lite"
 import { csv } from "d3"
+import { Handler } from "vega-tooltip"
+import { config } from "./config"
 
 async function getData(url) {
   const data = await csv(url)
@@ -27,7 +29,12 @@ const viz = vl
 const VegaLiteComponent = () => {
   const chartRef = useRef(null)
   useEffect(() => {
-    vl.register(vega, vegaLite, {})
+    vl.register(vega, vegaLite, {
+      view: { renderer: "svg" },
+      init: (view) => {
+        view.tooltip(new Handler().call)
+      },
+    })
 
     getData(dataUrl).then((data) => {
       viz
@@ -35,6 +42,7 @@ const VegaLiteComponent = () => {
         .width(window.innerWidth)
         .height(window.innerHeight)
         .autosize({ type: "fit", contains: "padding" })
+        .config(config)
         .render()
         .then((chart) => {
           chartRef.current.appendChild(chart)
