@@ -3,19 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "d3": "^7.0.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "d3": "^7.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "react-vega": "^7.4.3",
-    "vega": "^5.20.2",
-    "vega-lite": "5.0.x",
+    "react-vega": "^7.4.4",
+    "vega": "^5.21.0",
+    "vega-lite": "^5.1.1",
     "vega-lite-api": "^5.0.0",
-    "vega-tooltip": "^0.25.1",
-    "web-vitals": "^1.0.1"
+    "vega-tooltip": "^0.27.0",
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "typescript": "^4.3.3"
+    "typescript": "^4.4.4"
   }
 }
